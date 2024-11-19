@@ -1,0 +1,43 @@
+﻿@model Message
+@{
+    ViewData["Title"] = "MessageDetail";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Deneyimler</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Deneyim Güncelleme Sayfası</div>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post">
+                            <input type="hidden" asp-for="@Model.MessageId" />
+                            <label>Firma Biligisi</label>
+                            <br />
+                            <input type="text" asp-for="@Model.NameSurname" class="form-control" />
+                            <br />
+                            <label>Çalışma Pozisyonu</label>
+                            <br />
+                            <input type="text" asp-for="@Model.Subject" class="form-control" />
+                            <br />
+                            <label>Tarih Aralığı</label>
+                            <br />
+                            <input type="text" asp-for="@Model.SendDate" class="form-control" />
+                            <br />
+                            <label>Açıklama</label>
+                            <br />
+                            <textarea rows="5" class="form-control" asp-for="@Model.Content"></textarea>
+                            <br />
+                        </form>
+                        <button class="btn btn-dark"><a href="/Message/inbox/" style="color:white"> <=Mesajlara Dön </a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
